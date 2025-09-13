@@ -1,214 +1,62 @@
 ---
-title: 'Markdown Style Guide'
-description: 'Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.'
-pubDate: 'Jun 19 2024'
-heroImage: '../../assets/blog-placeholder-1.jpg'
+title: "请gpt协助搭建一个blog"
+description: "这是一个关于零基础的小白，使用ai协助搭建一个blog的文章，搭建期间问题频出，最终花了一整天才勉强搞定。"
+pubDate: "2025-09-13"
+heroImage: "../../assets/blog-placeholder-1.jpg"
 ---
 
-Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
+# 第一次博客实战：请 GPT 协助搭建一个 blog
 
-## Headings
+作为一个零基础的小白，我本以为让 ai 帮忙搭建一个博客会是一件“点点按钮就能完成”的小事，但真正上手后才发现，坑比想象中要多得多。好在 GPT 还算靠谱，它像一个随叫随到的老师，拥有绝对的耐心，帮我一步一步完成。
 
-The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
+---
 
-# H1
+## 起点：从想法到第一步
 
-## H2
+一开始，我的想法很简单：  
+_我想拥有一个能记录文字和图片的空间，让它在互联网上被人看到。_
 
-### H3
+我选择了 **Astro + Vercel** 的方案，并购买了一个域名，由于没有任何编程和代码知识，起初对怎么安装和配置都非常头疼，使用 ai 的效率也是很低，因为无法发现问题，也很难问到点上，相当煎熬，没办法只能先去看一些基础的教程，包括工具使用，html 语言等。
 
-#### H4
+---
 
-##### H5
+## 路上的问题
 
-###### H6
+在一天的折腾里，我碰到的问题包括：
 
-## Paragraph
+- **打包错误**：Rollup 提示我代码有问题，其实是文件头部写错。
+- **图片不显示**：本地能预览，但部署后域名访问不到。
+- **路径混乱**：一会儿用 `astro:assets`，一会儿又改成 `public/images`。
+- **域名解析**：配置了半天 DNS，才终于能通过自定义域名访问。
 
-Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.
+## 不过好在每卡在一个地方，拍图就问 GPT，基本都能很快解决，只是最后遇到无法在 vercel 部署的问题，来来回回沟通了几个小时也没有搞定，原因是图片路径问题。
 
-Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.
+## 转机：从混乱到串联
 
-## Images
+真正的突破点在图片路径上：
 
-### Syntax
+1. **图片放 public**：只要把图片丢进 `public/images/`，就能在文章里用 `/images/xxx.jpg` 引用，部署后也不会失效。
+2. **文章用 Markdown**：只要写好 frontmatter（`title/date/description`），Astro 就能自动收录，生成博客列表。
 
-```markdown
-![Alt text](./full/or/relative/path/of/image)
-```
+有了这两点，后续的问题就逐渐清晰起来。我终于把之前散乱的代码和文章，整理成了一条清晰的脉络。
 
-### Output
+---
 
-![blog placeholder](../../assets/blog-placeholder-about.jpg)
+## 最后的成品
 
-## Blockquotes
+最终，能打开这篇你现在正在读的文章。
 
-The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a `footer` or `cite` element, and optionally with in-line changes such as annotations and abbreviations.
+这个经历还是很有感想的：**即使是零基础，只要有 AI 的帮助，也能在短时间内实现原本遥不可及的目标。**
+AI 极大的提高了学习效率！
 
-### Blockquote without attribution
+---
 
-#### Syntax
+## 小结与感悟
 
-```markdown
-> Tiam, ad mint andaepu dandae nostion secatur sequo quae.  
-> **Note** that you can use _Markdown syntax_ within a blockquote.
-```
+这一天的三点启示：
 
-#### Output
+1. **不要怕出错** —— 错误是学习最快的入口。
+2. **多提问，多求证** —— 有 GPT 这样的工具，不要羞于频繁发问。
+3. **保持耐心** —— 最终看到页面跑起来的一刻，所有的等待和调试都值得。
 
-> Tiam, ad mint andaepu dandae nostion secatur sequo quae.  
-> **Note** that you can use _Markdown syntax_ within a blockquote.
-
-### Blockquote with attribution
-
-#### Syntax
-
-```markdown
-> Don't communicate by sharing memory, share memory by communicating.<br>
-> — <cite>Rob Pike[^1]</cite>
-```
-
-#### Output
-
-> Don't communicate by sharing memory, share memory by communicating.<br>
-> — <cite>Rob Pike[^1]</cite>
-
-[^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
-
-## Tables
-
-### Syntax
-
-```markdown
-| Italics   | Bold     | Code   |
-| --------- | -------- | ------ |
-| _italics_ | **bold** | `code` |
-```
-
-### Output
-
-| Italics   | Bold     | Code   |
-| --------- | -------- | ------ |
-| _italics_ | **bold** | `code` |
-
-## Code Blocks
-
-### Syntax
-
-we can use 3 backticks ``` in new line and write snippet and close with 3 backticks on new line and to highlight language specific syntax, write one word of language name after first 3 backticks, for eg. html, javascript, css, markdown, typescript, txt, bash
-
-````markdown
-```html
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Example HTML5 Document</title>
-  </head>
-  <body>
-    <p>Test</p>
-  </body>
-</html>
-```
-````
-
-### Output
-
-```html
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Example HTML5 Document</title>
-  </head>
-  <body>
-    <p>Test</p>
-  </body>
-</html>
-```
-
-## List Types
-
-### Ordered List
-
-#### Syntax
-
-```markdown
-1. First item
-2. Second item
-3. Third item
-```
-
-#### Output
-
-1. First item
-2. Second item
-3. Third item
-
-### Unordered List
-
-#### Syntax
-
-```markdown
-- List item
-- Another item
-- And another item
-```
-
-#### Output
-
-- List item
-- Another item
-- And another item
-
-### Nested list
-
-#### Syntax
-
-```markdown
-- Fruit
-  - Apple
-  - Orange
-  - Banana
-- Dairy
-  - Milk
-  - Cheese
-```
-
-#### Output
-
-- Fruit
-  - Apple
-  - Orange
-  - Banana
-- Dairy
-  - Milk
-  - Cheese
-
-## Other Elements — abbr, sub, sup, kbd, mark
-
-### Syntax
-
-```markdown
-<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
-
-H<sub>2</sub>O
-
-X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
-
-Press <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd> to end the session.
-
-Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
-```
-
-### Output
-
-<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
-
-H<sub>2</sub>O
-
-X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
-
-Press <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd> to end the session.
-
-Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
+今天的博客，是我与 GPT 深度合作的一次。
